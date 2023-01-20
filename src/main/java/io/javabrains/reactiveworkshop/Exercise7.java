@@ -35,15 +35,19 @@ public class Exercise7 {
 //                .subscribe(System.out::println);
 
         // Switch ints from intNumbersFlux to the right user from userFlux
-        ReactiveSources.intNumbersFlux()
-                .flatMap(id -> ReactiveSources.userFlux().filter(user -> user.getId() == id))
-                .subscribe(System.out::println);
+//        ReactiveSources.intNumbersFlux()
+//                .flatMap(id -> ReactiveSources.userFlux().filter(user -> user.getId() == id))
+//                .subscribe(System.out::println);
 
         // Print only distinct numbers from intNumbersFluxWithRepeat
-        // TODO: Write code here
+//        ReactiveSources.intNumbersFluxWithRepeat()
+//                .distinct()
+//                .subscribe(System.out::println);
 
         // Print from intNumbersFluxWithRepeat excluding immediately repeating numbers
-        // TODO: Write code here
+        ReactiveSources.intNumbersFluxWithRepeat()
+                .distinctUntilChanged()
+                .subscribe(System.out::println);
 
         System.out.println("Press a key to end");
         System.in.read();
