@@ -10,13 +10,14 @@ public class Exercise7 {
         // Use ReactiveSources.intNumberMono() and ReactiveSources.userMono()
 
         // Print all values from intNumbersFlux that's greater than 5
+//
+
+        // Print 10 times each value from intNumbersFlux that's greater than 5
         ReactiveSources.intNumbersFlux()
                 .filter(x -> x > 5)
                 .log()
+                .map(x -> x * 10)
                 .subscribe(System.out::println);
-
-        // Print 10 times each value from intNumbersFlux that's greater than 5
-        // TODO: Write code here
 
         // Print 10 times each value from intNumbersFlux for the first 3 numbers emitted that's greater than 5
         // TODO: Write code here
